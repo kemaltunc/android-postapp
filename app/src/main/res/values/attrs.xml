@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClassicEditText">
+        <attr name="android:hint" format="string" />
+        <attr name="hintTextColor" format="color" />
+        <attr name="android:textColor" format="color" />
+        <attr name="android:inputType" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="ClassicButton">
+        <attr name="android:text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomHeader">
+        <attr name="android:text" format="string" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/custom_button"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:background="@color/dark_blue"
+    android:clickable="false"
+    android:textColor="@color/black"
+    android:textSize="@dimen/text_size_15sp"
+    app:cornerRadius="15dp"
+    tool:text="Giriş Yap" />

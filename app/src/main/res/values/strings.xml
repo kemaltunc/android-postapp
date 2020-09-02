@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">WallpaperAndroid</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="button_login">LOGIN</string>
+    <string name="button_register">REGISTER</string>
+
+    <string name="like">Like</string>
+    <string name="unLike">Unlike</string>
+    <string name="comment">Comment</string>
+
+    <string name="information_succesfully_shared"></string>
+    <string name="email">Email</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="welcome">Welcome Back</string>
+    <string name="cannot_be_black">Fields cannot be blank.</string>
+    <string name="password_dont_match">Passwords do not match.</string>
+    <string name="new_post">New Post</string>
+    <string name="back">Back</string>
+    <string name="logout">LOGOUT</string>
+</resources>
