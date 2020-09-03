@@ -28,8 +28,8 @@ android {
 
         debug {
             firebaseAppDistribution {
-                serviceCredentialsFile = "./app/wallpaperapp-2e5e0-48dd2daff616.json"
-                releaseNotes = "Git deneme"
+                serviceCredentialsFile = "./wallpaperapp-2e5e0-48dd2daff616.json"
+                releaseNotes = "Cli deneme github"
                 groups = "firstgroup"
             }
         }

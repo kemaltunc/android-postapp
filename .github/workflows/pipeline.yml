@@ -16,7 +16,7 @@ jobs:
         with:
           java-version: 1.8
 
-      - name: Firebase App Distribute
+      - name: WallpaperApp
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: ./gradlew assembleDebug appDistributionUploadDevDebug
