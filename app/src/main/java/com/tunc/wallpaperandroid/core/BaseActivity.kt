@@ -11,7 +11,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     private lateinit var loading: Dialog
 
-
     open fun showMessage(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
     }
