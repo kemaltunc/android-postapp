@@ -3,6 +3,7 @@ package com.tunc.wallpaperandroid.presentation.auth.login
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.tunc.wallpaperandroid.core.BaseViewModel
@@ -11,7 +12,6 @@ import com.tunc.wallpaperandroid.data.network.entity.request.LoginRequest
 import com.tunc.wallpaperandroid.domain.entity.UserEntity
 import com.tunc.wallpaperandroid.domain.usecase.AccountUseCase
 import com.tunc.wallpaperandroid.utility.LiveData.Event
-import com.tunc.wallpaperandroid.utility.LiveData.SingleLiveEvent
 import com.tunc.wallpaperandroid.utility.enums.FormError
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -24,9 +24,9 @@ constructor(
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : BaseViewModel() {
 
-    private val _userData = SingleLiveEvent<Event<DataState<UserEntity>>>()
+    private val _userData = MutableLiveData<Event<DataState<UserEntity>>>()
 
-    private val _formError = SingleLiveEvent<Event<FormError>>()
+    private val _formError = MutableLiveData<Event<FormError>>()
 
     val dataState: LiveData<Event<DataState<UserEntity>>>
         get() = _userData

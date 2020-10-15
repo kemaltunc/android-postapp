@@ -1,11 +1,11 @@
 package com.tunc.wallpaperandroid.core
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tunc.wallpaperandroid.data.exception.ApiErrorHandle
 import com.tunc.wallpaperandroid.data.exception.ErrorModel
 import com.tunc.wallpaperandroid.utility.LiveData.Event
-import com.tunc.wallpaperandroid.utility.LiveData.SingleLiveEvent
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -14,11 +14,11 @@ import kotlinx.coroutines.flow.flow
 abstract class BaseViewModel : ViewModel() {
 
     val errorHandle =
-        SingleLiveEvent<Event<ErrorModel>>()
+        MutableLiveData<Event<ErrorModel>>()
     val showLoading =
-        SingleLiveEvent<Event<Boolean>>()
+        MutableLiveData<Event<Boolean>>()
     val hideLoading =
-        SingleLiveEvent<Event<Boolean>>()
+        MutableLiveData<Event<Boolean>>()
 
     fun <T> execute(call: suspend () -> T): Flow<DataState<T>> = flow {
         emit(DataState.Loading)

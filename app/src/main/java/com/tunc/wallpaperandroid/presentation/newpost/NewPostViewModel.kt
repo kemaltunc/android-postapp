@@ -3,6 +3,7 @@ package com.tunc.wallpaperandroid.presentation.newpost
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.tunc.wallpaperandroid.core.BaseViewModel
@@ -11,7 +12,6 @@ import com.tunc.wallpaperandroid.data.network.entity.request.PostRequest
 import com.tunc.wallpaperandroid.domain.usecase.PostUseCase
 import com.tunc.wallpaperandroid.domain.usecase.UploadUseCase
 import com.tunc.wallpaperandroid.utility.LiveData.Event
-import com.tunc.wallpaperandroid.utility.LiveData.SingleLiveEvent
 import com.tunc.wallpaperandroid.utility.enums.FormError
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -26,8 +26,8 @@ constructor(
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : BaseViewModel() {
 
-    private val _postData = SingleLiveEvent<Event<DataState<Boolean>>>()
-    private val _formError = SingleLiveEvent<Event<FormError>>()
+    private val _postData = MutableLiveData<Event<DataState<Boolean>>>()
+    private val _formError = MutableLiveData<Event<FormError>>()
 
 
     val postData: LiveData<Event<DataState<Boolean>>>
@@ -70,7 +70,7 @@ constructor(
                             }.launchIn(viewModelScope)
                         }
                         is DataState.Loading -> {
-                            showLoading.call()
+                            showLoading.value = Event(true)
                         }
                     }
                 }.launchIn(viewModelScope)
